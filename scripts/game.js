@@ -2,6 +2,7 @@ let game = {
     currentGame: [],
     playerMoves: [],
     score: 0,
+    addTurn,
     choices: ["button1", "button2", "button3", "button4"]
 };
 
@@ -10,6 +11,13 @@ function newGame() {
     game.playerMoves = [];
     game.score = 0;
     showScore();
+    addTurn();
+}
+
+function addTurn() {
+    game.playerMoves = [];
+    game.currentGame.push(game.choices[(Math.floor(Math.random() * 4))]);
+    // showTurns();
 }
 
 function showScore() {
